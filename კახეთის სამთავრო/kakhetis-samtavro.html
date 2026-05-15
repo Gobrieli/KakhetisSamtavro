@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>კახეთის სამთავრო — VII–VIII საუკუნეები</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;600;700&family=Noto+Sans+Georgian:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #c9962b;
+    --gold-light: #e8c36a;
+    --gold-dark: #8a6210;
+    --crimson: #8b1a1a;
+    --crimson-light: #c94040;
+    --parchment: #f5ead6;
+    --parchment-dark: #e8d5b0;
+    --parchment-darker: #d4b882;
+    --ink: #2a1a0e;
+    --ink-soft: #4a3520;
+    --stone: #6b5a3e;
+    --stone-light: #a08860;
+    --bg: #1a0f05;
+    --border-ornate: 2px solid var(--gold-dark);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,150,43,0.04) 40px, rgba(201,150,43,0.04) 41px),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,150,43,0.04) 40px, rgba(201,150,43,0.04) 41px);
+    font-family: 'Noto Sans Georgian', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ──────── HEADER ──────── */
+  header {
+    background: linear-gradient(180deg, #0d0600 0%, #1f0e03 40%, #2e1a08 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 60% 80% at 50% -10%, rgba(201,150,43,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-ornament-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0 0;
+    gap: 12px;
+    opacity: 0.7;
+  }
+
+  .ornament-line {
+    height: 1px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .ornament-diamond {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .header-inner {
+    text-align: center;
+    padding: 20px 24px 28px;
+    position: relative;
+  }
+
+  .header-subtitle-top {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold-light);
+    opacity: 0.75;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .header-title {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: clamp(32px, 7vw, 64px);
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1.15;
+    text-shadow: 0 2px 24px rgba(201,150,43,0.3);
+    margin-bottom: 8px;
+  }
+
+  .header-title span {
+    display: block;
+    font-size: clamp(18px, 4vw, 36px);
+    font-weight: 400;
+    color: var(--parchment);
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  .header-dates {
+    display: inline-block;
+    margin: 16px auto 0;
+    padding: 7px 28px;
+    border: 1px solid rgba(201,150,43,0.45);
+    border-radius: 2px;
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 15px;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.25);
+  }
+
+  /* NAV */
+  nav {
+    background: rgba(0,0,0,0.55);
+    border-top: 1px solid rgba(201,150,43,0.3);
+    border-bottom: 1px solid rgba(201,150,43,0.3);
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    padding: 0 16px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: var(--parchment-dark);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.2s, background 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav ul li a:hover {
+    color: var(--gold-light);
+    background: rgba(201,150,43,0.08);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ──────── MAIN ──────── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--parchment);
+    border: 2px solid var(--gold-dark);
+    border-radius: 2px;
+    padding: 36px 40px;
+    position: relative;
+    margin-bottom: 48px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.55);
+  }
+
+  .hero-card::before,
+  .hero-card::after {
+    content: '✦';
+    position: absolute;
+    color: var(--gold-dark);
+    font-size: 18px;
+  }
+  .hero-card::before { top: 10px; left: 14px; }
+  .hero-card::after  { bottom: 10px; right: 14px; }
+
+  .hero-card h2 {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--crimson);
+    border-bottom: 1px solid var(--parchment-darker);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+
+  .hero-card p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+
+  .hero-card p + p { margin-top: 14px; }
+
+  .dropcap::first-letter {
+    float: left;
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 68px;
+    font-weight: 700;
+    color: var(--crimson);
+    line-height: 0.75;
+    margin: 6px 10px 0 0;
+    padding: 4px 2px;
+    border-right: 2px solid var(--gold-dark);
+    padding-right: 10px;
+  }
+
+  /* ──────── SECTION ──────── */
+  section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .section-header::before,
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-dark), transparent);
+  }
+  .section-header::after {
+    background: linear-gradient(90deg, transparent, var(--gold-dark));
+  }
+
+  .section-header h2 {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold-light);
+    white-space: nowrap;
+    text-shadow: 0 0 20px rgba(201,150,43,0.25);
+  }
+
+  /* CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--parchment);
+    border: 1px solid var(--parchment-darker);
+    border-top: 3px solid var(--gold-dark);
+    border-radius: 2px;
+    padding: 22px 22px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.6);
+  }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .card h3 {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--crimson);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--parchment-darker);
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold-dark), var(--stone-light), var(--gold-dark));
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    background: var(--parchment);
+    border: 1px solid var(--parchment-darker);
+    border-radius: 2px;
+    padding: 18px 20px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    transition: box-shadow 0.2s;
+  }
+
+  .timeline-item:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 20px;
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border: 2px solid var(--gold-dark);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(201,150,43,0.5);
+  }
+
+  .timeline-year {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .timeline-item h3 {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--crimson);
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  /* QUIZ */
+  .quiz-wrapper {
+    background: var(--parchment);
+    border: 2px solid var(--gold-dark);
+    border-radius: 2px;
+    padding: 28px 32px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  }
+
+  .quiz-question {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--crimson);
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  .quiz-progress {
+    font-size: 13px;
+    color: var(--stone);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .quiz-option {
+    background: var(--parchment-dark);
+    border: 1px solid var(--parchment-darker);
+    border-radius: 2px;
+    padding: 12px 18px;
+    font-size: 15px;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s, transform 0.12s;
+    text-align: left;
+    font-family: 'Noto Sans Georgian', sans-serif;
+  }
+
+  .quiz-option:hover:not(:disabled) {
+    background: var(--parchment-darker);
+    border-color: var(--gold-dark);
+    transform: translateX(4px);
+  }
+
+  .quiz-option.correct {
+    background: #d4edda;
+    border-color: #4a8a5a;
+    color: #1a4a28;
+  }
+
+  .quiz-option.wrong {
+    background: #f8d7da;
+    border-color: #9a3535;
+    color: #5a1a1a;
+  }
+
+  .quiz-option:disabled { cursor: default; }
+
+  .quiz-feedback {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 2px;
+    margin-top: 8px;
+    display: none;
+  }
+
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.good { background: #d4edda; color: #1a4a28; border: 1px solid #4a8a5a; }
+  .quiz-feedback.bad  { background: #f8d7da; color: #5a1a1a; border: 1px solid #9a3535; }
+
+  .quiz-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+
+  .btn-quiz {
+    background: var(--crimson);
+    color: var(--parchment);
+    border: none;
+    border-radius: 2px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-family: 'Noto Serif Georgian', serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.12s;
+    display: none;
+  }
+
+  .btn-quiz:hover { background: var(--crimson-light); transform: scale(1.03); }
+  .btn-quiz.visible { display: inline-block; }
+
+  .quiz-score {
+    text-align: center;
+    display: none;
+  }
+  .quiz-score.show { display: block; }
+
+  .quiz-score .score-number {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--crimson);
+    line-height: 1;
+  }
+
+  .quiz-score p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    line-height: 1.65;
+  }
+
+  .btn-restart {
+    margin-top: 18px;
+    background: var(--gold-dark);
+    color: var(--parchment);
+    border: none;
+    border-radius: 2px;
+    padding: 11px 28px;
+    font-size: 15px;
+    font-family: 'Noto Serif Georgian', serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-restart:hover { background: var(--gold); }
+
+  /* FACT BOX */
+  .fact-box {
+    background: var(--parchment);
+    border-left: 4px solid var(--gold-dark);
+    border-top: 1px solid var(--parchment-darker);
+    border-bottom: 1px solid var(--parchment-darker);
+    border-right: 1px solid var(--parchment-darker);
+    padding: 16px 20px;
+    margin: 20px 0;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.35);
+  }
+
+  .fact-box .fact-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .fact-box p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* MAP SECTION */
+  .map-card {
+    background: var(--parchment);
+    border: 1px solid var(--parchment-darker);
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+  }
+
+  .map-visual {
+    background: #c8d8a0;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--gold-dark);
+  }
+
+  .map-visual svg { width: 100%; height: 100%; }
+
+  .map-legend {
+    padding: 18px 22px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ──────── FOOTER ──────── */
+  footer {
+    background: linear-gradient(180deg, #1f0e03 0%, #0d0600 100%);
+    border-top: 3px solid var(--gold-dark);
+    padding: 36px 24px 24px;
+    text-align: center;
+  }
+
+  .footer-ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto 28px;
+    text-align: left;
+  }
+
+  .footer-col h4 {
+    font-family: 'Noto Serif Georgian', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(201,150,43,0.25);
+  }
+
+  .footer-col p, .footer-col li {
+    font-size: 13px;
+    color: var(--stone-light);
+    line-height: 1.75;
+    list-style: none;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(201,150,43,0.2);
+    padding-top: 18px;
+    font-size: 12px;
+    color: var(--stone);
+    letter-spacing: 0.5px;
+  }
+
+  /* SCROLL-IN ANIMATION */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    .hero-card { padding: 22px 18px; }
+    nav ul li a { padding: 10px 12px; font-size: 13px; }
+    .quiz-wrapper { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header>
+  <div class="header-ornament-top">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <div class="header-inner">
+    <p class="header-subtitle-top">ისტორიული საქართველო · VII კლასი</p>
+    <h1 class="header-title">
+      კახეთის სამთავრო
+      <span>ქართული სახელმწიფოებრიობის ისტორია</span>
+    </h1>
+    <div class="header-dates">VII – VIII საუკუნეები</div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#intro">შესავალი</a></li>
+      <li><a href="#geography">გეოგრაფია</a></li>
+      <li><a href="#history">ისტორია</a></li>
+      <li><a href="#culture">კულტურა</a></li>
+      <li><a href="#quiz">ვიქტორინა</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main>
+
+  <!-- INTRO -->
+  <div id="intro" class="hero-card fade-in">
+    <h2>🏰 რას წარმოადგენს კახეთის სამთავრო?</h2>
+    <p class="dropcap">კახეთის სამთავრო იყო ერთ-ერთი პირველი ქართული სახელმწიფოებრივი წარმონაქმნი, რომელიც შეიქმნა VII საუკუნეში — ანუ, დაახლოებით 1400 წლის წინ. ეს სამთავრო მდებარეობდა კახეთის რეგიონში — დღევანდელი საქართველოს აღმოსავლეთ ნაწილში.</p>
+    <p>ამ პერიოდში საქართველო დაყოფილი იყო რამდენიმე პატარა სამთαვროდ, რადგან ირანი, ბიზანტია და არაბები. კახეთი იყო ერთ-ერთი პირველი ქართული სახელმწიფოებრივი წარმონაქმნი.</p>
+  </div>
+
+  <!-- GEOGRAPHY -->
+  <section id="geography" class="fade-in">
+    <div class="section-header">
+      <h2>🗺️ გეოგრაფია და მდებარეობა</h2>
+    </div>
+
+    <div class="map-card">
+      <div class="map-visual">
+        <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Background -->
+          <rect width="520" height="220" fill="#b8cfa0"/>
+          <!-- Mountains north (Caucasus) -->
+          <polygon points="0,60 40,20 80,55 120,15 160,50 200,22 240,48 280,18 320,52 360,25 400,55 440,20 480,50 520,30 520,80 0,80" fill="#8a7a60"/>
+          <polygon points="0,70 40,35 80,65 120,28 160,60 200,35 240,58 280,30 320,62 360,38 400,65 440,32 480,60 520,42 520,80 0,80" fill="#9a8a70"/>
+          <!-- Alazani river -->
+          <path d="M20,110 Q100,105 180,115 Q260,125 340,118 Q420,112 500,120" stroke="#4a7ab8" stroke-width="3" fill="none" opacity="0.8"/>
+          <!-- Main territory of Kakheti -->
+          <path d="M80,82 L360,82 L380,100 L370,160 L280,185 L150,180 L80,155 Z" fill="#c8a868" opacity="0.7"/>
+          <!-- City dots -->
+          <circle cx="200" cy="125" r="7" fill="#8b1a1a" stroke="#fff" stroke-width="1.5"/>
+          <text x="210" y="120" font-size="11" fill="#2a1a0e" font-weight="bold" font-family="sans-serif">ვეჯინი</text>
+          <circle cx="290" cy="140" r="6" fill="#8b1a1a" stroke="#fff" stroke-width="1.5"/>
+          <text x="300" y="135" font-size="10" fill="#2a1a0e" font-family="sans-serif">ბოდბე</text>
+          <circle cx="150" cy="130" r="5" fill="#c9962b" stroke="#fff" stroke-width="1.5"/>
+          <text x="158" y="126" font-size="10" fill="#2a1a0e" font-family="sans-serif">ხორნაბუჯი</text>
+          <!-- Alazani label -->
+          <text x="120" y="108" font-size="10" fill="#185fa5" font-style="italic" font-family="sans-serif">მდ. ალაზანი</text>
+          <!-- Region label -->
+          <text x="195" y="160" font-size="16" fill="#5a1a0e" font-weight="bold" font-family="sans-serif" opacity="0.6">კახეთი</text>
+          <!-- Compass -->
+          <text x="470" y="195" font-size="14" fill="#2a1a0e" font-family="sans-serif">N ↑</text>
+        </svg>
+      </div>
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#8b1a1a"></div>მთავარი ქალაქები</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4a7ab8"></div>მდინარე ალაზანი</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#c8a868"></div>კახეთის ტერიტორია</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8a7a60"></div>კავკასიონი</div>
+      </div>
+    </div>
+
+    <div class="cards-grid" style="margin-top: 20px;">
+      <div class="card">
+        <span class="card-icon">🏔️</span>
+        <h3>ბუნებრივი საზღვრები</h3>
+        <p>ჩრდილოეთიდან კახეთს იცავდა მძლავრი კავკასიონის მთები. სამხრეთიდან — მდინარე ალაზნის ვაკე. ეს ბუნებრივი ბარიერები სამთავროს თავდაცვაში ეხმარებოდა.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌾</span>
+        <h3>ნოყიერი მიწა</h3>
+        <p>ალაზნის ველი, რომელსაც ირწყავდა ალაზანი, ერთ-ერთი ყველაზე ნოყიერი მიწა იყო მთელ კავკასიაში. აქ კარგად იზრდებოდა ხორბალი, ყურძენი და ხილი.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏙️</span>
+        <h3>ვეჯინი — დედაქალაქი</h3>
+        <p>კახეთის სამთავროს მთავარი ქალაქი იყო ვეჯინი. სწორედ აქ ცხოვრობდა და მართავდა კახეთის ერისმთავარი — ანუ მთავარი.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY TIMELINE -->
+  <section id="history" class="fade-in">
+    <div class="section-header">
+      <h2>📜 მნიშვნელოვანი მოვლენები</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-year">VI საუკუნის ბოლო</div>
+        <h3>სასანიანთა ირანის გაბატონება</h3>
+        <p>ირანელი სასანიდები საქართველოს დიდ ნაწილს აკონტროლებდნენ. ამ პერიოდში კახეთი ცდილობდა ირანისგან დამოუკიდებლობის შენარჩუნებას და ადგილობრივი მმართველობის გაძლიერებას.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">VII საუკუნე — 600-იანი წლები</div>
+        <h3>კახეთის სამთავრო ყალიბდება</h3>
+        <p>ბიზანტიასა და ირანს შორის დაუსრულებელი ომების ფონზე, კახეთის ადგილობრივი მთავრები ახერხებდნენ საკუთარი ძალაუფლების გაძლიერებას. ყალიბდება ერისმთავრობა — ანუ ადგილობრივი მმართველობის სისტემა.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">640-იანი წლები</div>
+        <h3>არაბთა შემოსევები</h3>
+        <p>VII საუკუნის შუა ხანებში ძლიერი არაბი დამპყრობლები შეიჭრნენ კავკასიაში. ისინი ეძებდნენ ახალ ტერიტორიებს. კახეთი, თავისი მთებით, გარკვეულ დაცვას იღებდა, მაგრამ მაინც განიცდიდა არაბთა ზეწოლას.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">VII–VIII საუკუნეები</div>
+        <h3>კახეთი — ბრძოლა გადარჩენისთვის</h3>
+        <p>ამ ორ საუკუნეში კახეთი ბიზანტიის, ხაზართა სახანოს და არაბთა სახალიფოს გავლენებს შორის ბალანსს ეძებდა. სამთავრო ხან ერთ ძალას ამჯობინებდა, ხანაც — მეორეს, რათა დამოუკიდებლობა შეენარჩუნებინა.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">VIII საუკუნე — 700-იანი წლები</div>
+        <h3>ხაზართა გავლენა</h3>
+        <p>კავკასიის ჩრდილოეთიდან ხაზართა ძლიერი ტომები ებრძოდნენ არაბებს. კახეთი ხანდახან ხაზართა მხარეს იდგა არაბების წინააღმდეგ, რადგან ხაზართა ძალაუფლება ნაკლებად სახიფათო ჩანდა.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CULTURE -->
+  <section id="culture" class="fade-in">
+    <div class="section-header">
+      <h2>✝️ კულტურა და ცხოვრება</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">⛪</span>
+        <h3>ქრისტიანობა</h3>
+        <p>IV საუკუნიდანვე ქართველები ქრისტიანები იყვნენ. კახეთშიც ეკლესიები შენდებოდა. ბოდბის მონასტერი იყო ყველაზე მნიშვნელოვანი — სწორედ აქ განისვენებს წმინდა ნინოს ნეშტი.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🍷</span>
+        <h3>მევენახეობა</h3>
+        <p>კახეთი მაშინაც, ახლაც ცნობილი იყო ღვინით. ადგილობრივი გლეხები ყურძენს ქვევრებში (დიდ თიხის ქოთნებში) ღვინოდ ამზადებდნენ — ეს ტრადიცია 8000 წელზე მეტია!</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🛡️</span>
+        <h3>სამხედრო ყოფა</h3>
+        <p>კახეთის მცხოვრებლებს ყოველთვის ბრძოლის მზადყოფნა სჭირდებოდათ. ახალგაზრდა კაცები ისწავლიდნენ ცხენოსნობას, მშვილდ-ისრის სროლასა და ხმლის ხმარებას.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>ქართული ენა და წერა</h3>
+        <p>V საუკუნეში შექმნილი ქართული ანბანი ამ პერიოდშიც გამოიყენებოდა. ეკლესიებში სახარებებს, ფსალმუნებსა და სხვა წიგნებს ქართულ ენაზე წერდნენ.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏗️</span>
+        <h3>მშენებლობა</h3>
+        <p>ამ საუკუნეებში კახეთში ციხე-სიმაგრეები და ეკლესიები შენდებოდა. ხორნაბუჯი იყო ერთ-ერთი ყველაზე ძლიერი ციხე, რომელიც სამთავროს სამხრეთ საზღვარს იცავდა.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌾</span>
+        <h3>გლეხთა ყოფა</h3>
+        <p>ადამიანების უმეტესობა გლეხი იყო. ისინი მიწას ამუშავებდნენ, პურს ახდიდნენ, ყურძენს კრეფდნენ. ბაზრობებზე ყიდდნენ ჭურჭელს, ქსოვილებს და საკვებ პროდუქტებს.</p>
+      </div>
+    </div>
+
+    <div class="fact-box" style="margin-top: 24px;">
+      <div class="fact-label">📚 გახსოვდეს!</div>
+      <p>კახეთის სამთავრო მნიშვნელოვანია ქართული ისტორიისთვის, რადგან ის ერთ-ერთი იმ ბირთვებიდანაა, საიდანაც მოგვიანებით — X–XI საუკუნეებში — გაერთიანდა ერთიანი საქართველოს სამეფო ბაგრატ III-ისა და დავით IV აღმაშენებლის ხელმძღვანელობით.</p>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="fade-in">
+    <div class="section-header">
+      <h2>🧠 ვიქტორინა — გამოსცადე შენი ცოდნა!</h2>
+    </div>
+    <div class="quiz-wrapper">
+      <div id="quiz-body">
+        <div class="quiz-progress" id="quiz-prog">კითხვა 1 / 6</div>
+        <div class="quiz-question" id="quiz-q"></div>
+        <div class="quiz-options" id="quiz-opts"></div>
+        <div class="quiz-feedback" id="quiz-fb"></div>
+        <div class="quiz-nav">
+          <button class="btn-quiz" id="btn-next">შემდეგი →</button>
+        </div>
+      </div>
+      <div class="quiz-score" id="quiz-score">
+        <div class="score-number" id="score-num"></div>
+        <p id="score-msg"></p>
+        <button class="btn-restart" onclick="restartQuiz()">🔄 ხელახლა სცადე</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="footer-ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond" style="background: var(--gold-dark);"></div>
+    <div class="ornament-line" style="background: linear-gradient(90deg, transparent, #8a6210, transparent);"></div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>📍 სამთავრო</h4>
+      <ul>
+        <li>🗓 VII–VIII საუკუნეები</li>
+        <li>📌 აღმოსავლეთ საქართველო</li>
+        <li>🏙 დედაქალაქი: ვეჯინი</li>
+        <li>⛪ კულტურა: ქრისტიანული</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>🌍 მეზობლები</h4>
+      <ul>
+        <li>🔱 ბიზანტიის იმპერია</li>
+        <li>☽ არაბთა სახალიფო</li>
+        <li>⚔️ ხაზართა სახანო</li>
+        <li>🦅 ჰერეთის სამთავრო</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📚 საკვანძო ცნებები</h4>
+      <ul>
+        <li>ერისმთავარი — ადგილ. მთავარი</li>
+        <li>სამთავრო — პატარა სახელმწიფო</li>
+        <li>ქვევრი — ღვინის ჭურჭელი</li>
+        <li>ბოდბე — წმინდა ნინოს მონ.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>კახეთის სამთავრო · VII–VIII საუკუნეები · ისტორია VII კლასი</p>
+    <p style="font-size:13px; opacity:0.8; margin-bottom:4px;">Made by</p>
+    <p>Gabriel Katsadze · Luka Vasadze · Temo Siradze</p>
+    <p style="margin-top:6px; opacity: 0.6;">საგანმანათლებლო მასალა · © 2024</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll animation
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  faders.forEach(f => observer.observe(f));
+
+  // Quiz
+  const questions = [
+    { q: "რომელ საუკუნეებში არსებობდა კახეთის სამთავრო?", opts: ["V–VI საუკუნეები","VII–VIII საუკუნეები","IX–X საუკუნეები","XI–XII საუკუნეები"], ans: 1, exp: "სწორია! კახეთის სამთავრო ძირითადად VII–VIII საუკუნეებში განვითარდა." },
+    { q: "სად მდებარეობდა კახეთის სამთავრო?", opts: ["დასავლეთ საქართველოში","სამხრეთ საქართველოში","აღმოსავლეთ საქართველოში","ჩრდილოეთ კავკასიაში"], ans: 2, exp: "სწორია! კახეთი მდებარეობდა აღმოსავლეთ საქართველოში, ალაზნის ველზე." },
+    { q: "რომელი მდინარე გადიოდა კახეთის ტერიტორიაზე?", opts: ["მდ. მტკვარი","მდ. რიონი","მდ. ალაზანი","მდ. ენგური"], ans: 2, exp: "სწორია! ალაზანი კახეთის მთავარი მდინარეა, ის ნოყიერს ხდის ალაზნის ველს." },
+    { q: "კახეთის სამთავროს მთავარი ქალაქი იყო...", opts: ["ვეჯინი","ბოდბე","ხორნაბუჯი","ბოლნისი"], ans: 0, exp: "სწორია! ვეჯინი იყო კახეთის სამთავროს დედაქალაქი." },
+    { q: "VII საუკუნეში კავკასიაში შემოჭრილი ახალი ძალა?", opts: ["მონღოლები","ოსმალები","არაბები","ბულგარელები"], ans: 2, exp: "სწორია! 640-იან წლებში არაბი დამპყრობლები შეიჭრნენ კავკასიაში." },
+    { q: "სად განისვენებს წმინდა ნინო?", opts: ["სვეტიცხოვლის ტაძარში","ბოდბის მონასტერში","ალავერდის ტაძარში","ნინოწმინდაში"], ans: 1, exp: "სწორია! ბოდბის მონასტერი, კახეთში, სწორედ წმინდა ნინოს საფლავის ადგილია." }
+  ];
+
+  let cur = 0, score = 0, answered = false;
+
+  function loadQ() {
+    answered = false;
+    const q = questions[cur];
+    document.getElementById('quiz-prog').textContent = `კითხვა ${cur+1} / ${questions.length}`;
+    document.getElementById('quiz-q').textContent = q.q;
+    const optsEl = document.getElementById('quiz-opts');
+    optsEl.innerHTML = '';
+    q.opts.forEach((o,i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.textContent = o;
+      btn.onclick = () => selectAnswer(i);
+      optsEl.appendChild(btn);
+    });
+    const fb = document.getElementById('quiz-fb');
+    fb.className = 'quiz-feedback';
+    fb.textContent = '';
+    document.getElementById('btn-next').classList.remove('visible');
+  }
+
+  function selectAnswer(i) {
+    if(answered) return;
+    answered = true;
+    const q = questions[cur];
+    const btns = document.querySelectorAll('.quiz-option');
+    btns.forEach(b => b.disabled = true);
+    btns[i].classList.add(i === q.ans ? 'correct' : 'wrong');
+    btns[q.ans].classList.add('correct');
+    if(i === q.ans) score++;
+    const fb = document.getElementById('quiz-fb');
+    fb.textContent = i === q.ans ? '✅ ' + q.exp : '❌ სამწუხაროდ, არასწორია. ' + q.exp;
+    fb.className = 'quiz-feedback show ' + (i === q.ans ? 'good' : 'bad');
+    document.getElementById('btn-next').classList.add('visible');
+  }
+
+  document.getElementById('btn-next').onclick = () => {
+    cur++;
+    if(cur < questions.length) { loadQ(); }
+    else { showScore(); }
+  };
+
+  function showScore() {
+    document.getElementById('quiz-body').style.display = 'none';
+    const sc = document.getElementById('quiz-score');
+    sc.classList.add('show');
+    document.getElementById('score-num').textContent = `${score}/${questions.length}`;
+    const pct = score / questions.length;
+    const msgs = [
+      "ისევ სცადე! ყველაფრის ხელახლა გახსენება სჭირდება 📖",
+      "ცუდი არ არის, მაგრამ ერთხელ კიდევ გაიმეორე მასალა! 💪",
+      "კარგია! ძირითადი ფაქტები გახსოვს. 👍",
+      "ძალიან კარგი! კახეთის ისტორია კარგად იცი! 🏆",
+      "შესანიშნავია! ნამდვილი კახეთოლოგი ხარ! ⭐"
+    ];
+    const idx = pct < 0.2 ? 0 : pct < 0.5 ? 1 : pct < 0.7 ? 2 : pct < 1 ? 3 : 4;
+    document.getElementById('score-msg').textContent = msgs[idx];
+  }
+
+  function restartQuiz() {
+    cur = 0; score = 0;
+    document.getElementById('quiz-score').classList.remove('show');
+    document.getElementById('quiz-body').style.display = '';
+    loadQ();
+  }
+
+  loadQ();
+</script>
+</body>
+</html>
